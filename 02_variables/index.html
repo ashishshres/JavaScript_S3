@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Variables</h1>
+    <script>
+        var username = "ashish";
+        var email = "ashish@gmail.com";
+        var subjects = 5;
+        var isMarried = false;
+        var gpa = 3.8;
+        var currentSubjects = ["Research", "DotNet", "Computer Graphics", "Network Security", "Digital Pedagogy"];
+        var details = {
+            course: "BICTE",
+            faculty: "Education",
+            semester: 6
+        };
+
+        // single line comment
+
+        /*
+            This is 
+            a multi-line
+            comment
+        */
+
+        var a = 100;
+        let b = 200;
+        const c = 300;
+        console.log(a)
+        console.log(b)
+        console.log(c)
+
+        // var is global-scoped whereas, let and const are function scoped
+        {
+            var p = 100;
+            let q = 200;
+            const r = 300;
+        }
+        console.log(p)
+        console.log(q)
+        console.log(r)
+
+        // redeclare in var
+        var x = 100;
+        console.log(x)
+        var x = 200;
+        console.log(x)
+
+        // cannot redeclare in var
+        let y = 100;
+        console.log(y)
+        let y = 200;
+        console.log(y)
+
+        // reassign in var and let
+        var m = 10;
+        m = 20;
+
+        let n = 10;
+        n = 20;
+
+        // cannot reassign in const
+        const o = 10;
+        o = 20;
+
+        // formatting output
+        let firstname = "Ashish";
+        let lastname = "Shrestha";
+        let fullname = firstname + " " + lastname;
+        console.log("My name is " + fullname);
+        console.log("My name is", fullname);
+        console.log(`My name is ${fullname}`);
+
+        /*
+            ?Practice
+            Create variable 'fullname' and 'location' and print with following format using concatenation, comma, and string literals:
+            Expected Output:
+        I am Ashish Shrestha from Hetauda.
+        */
+
+    </script>
+</body>
+
+</html>
