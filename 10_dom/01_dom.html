@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Accessing HTML Elements</title>
+</head>
+
+<body>
+    <!-- getElementById -->
+    <h2 id="title">Hello World</h2>
+
+    <!-- getElementsByClassName -->
+    <p class="info">Paragraph One</p>
+    <p class="info">Paragraph Two</p>
+
+    <!-- getElementsByName -->
+    <input type="text" name="username" placeholder="Enter username">
+    <input type="text" name="username" placeholder="Enter again">
+
+    <!-- getElementsByTagName -->
+    <div>Div One</div>
+    <div>Div Two</div>
+
+    <button onclick="accessElements()">Click Me</button>
+
+    <script>
+        function accessElements() {
+
+            // 1. getElementById
+            let heading = document.getElementById("title");
+            heading.style.color = "blue";
+
+            // 2. getElementsByClassName
+            let paragraphs = document.getElementsByClassName("info");
+            paragraphs[0].style.color = "red";
+            paragraphs[1].style.color = "green";
+
+            // 3. getElementsByName
+            let inputs = document.getElementsByName("username");
+            inputs[0].value = "Ashish";
+            inputs[1].value = "Shrestha";
+
+            // 4. getElementsByTagName
+            let divs = document.getElementsByTagName("div");
+            divs[0].style.backgroundColor = "lightgray";
+            divs[1].style.backgroundColor = "lightyellow";
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Validation</title>
+</head>
+
+<body>
+
+    <h2>User Login</h2>
+
+    <form id="myForm">
+        <input type="text" id="email" placeholder="Enter Email"><br><br>
+        <input type="password" id="password" placeholder="Enter Password"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+        let form = document.getElementById("myForm");
+        form.addEventListener("submit", validateForm);
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let message = document.getElementById("message");
+
+            // Email validation (check @ only)
+            if (email.indexOf("@gmail.com") === -1) {
+                message.innerHTML = "Email is invalid";
+                message.style.color = "red";
+                return;
+            }
+
+            // Password length
+            if (password.length < 8) {
+                message.innerHTML = "Password must be at least 8 characters";
+                message.style.color = "red";
+                return;
+            }
+
+            let hasUpper = false;
+            let hasLower = false;
+            let hasNumber = false;
+            let hasSpecial = false;
+
+            for (let i = 0; i < password.length; i++) {
+                let ch = password[i];
+
+                if (ch >= 'A' && ch <= 'Z') {
+                    hasUpper = true;
+                } else if (ch >= 'a' && ch <= 'z') {
+                    hasLower = true;
+                } else if (ch >= '0' && ch <= '9') {
+                    hasNumber = true;
+                } else {
+                    hasSpecial = true;
+                }
+            }
+
+            if (!hasUpper || !hasLower || !hasNumber || !hasSpecial) {
+                message.innerHTML = "Password must contain uppercase, lowercase, number and special character";
+                message.style.color = "red";
+                return;
+            }
+
+            message.innerHTML = "Validation Successful!";
+            message.style.color = "green";
+        }
+    </script>
+
+</body>
+
+</html>

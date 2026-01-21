@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handling</title>
+</head>
+
+<body>
+
+    <h2 id="text">Click any button</h2>
+
+    <!-- Button using onclick -->
+    <button onclick="onclickBtn()">onclick Button</button>
+
+    <!-- Button using addEventListener -->
+    <button id="eventBtn">addEventListener Button</button>
+
+    <script>
+        // onclick function
+        function onclickBtn() {
+            document.getElementById("text").innerHTML = "Button clicked using onclick!";
+        }
+
+        // addEventListener
+        let btn = document.getElementById("eventBtn");
+        btn.addEventListener("click", eventListenerBtn);
+
+        function eventListenerBtn() {
+            document.getElementById("text").innerHTML = "Button clicked using addEventListener!";
+        }
+    </script>
+
+</body>
+
+</html>
